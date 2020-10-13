@@ -5,7 +5,7 @@ Home: http://bitbucket.org/ronaldoussoren/py2app
 
 Package license: MIT
 
-Feedstock license: BSD-3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/py2app-feedstock/blob/master/LICENSE.txt)
 
 Summary: py2app is a Python setuptools command which will allow you to make
 standalone Mac OS X application bundles and plugins from Python scripts.
@@ -14,7 +14,9 @@ py2app must be used on OSX to build applications, it cannot create Mac
 applications on other platforms.
 
 
+Development: http://bitbucket.org/ronaldoussoren/py2app
 
+Documentation: https://py2app.readthedocs.io/en/latest/
 
 Current build status
 ====================
@@ -52,6 +54,13 @@ Current build status
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=9213&branchName=master">
                   <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/py2app-feedstock?branchName=master&jobName=osx&configuration=osx_64_python3.8.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64_python3.9.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=9213&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/py2app-feedstock?branchName=master&jobName=osx&configuration=osx_64_python3.9.____cpython" alt="variant">
                 </a>
               </td>
             </tr>
