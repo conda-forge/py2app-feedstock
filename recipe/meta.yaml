@@ -11,7 +11,7 @@ source:
 
 build:
   skip: true  # [not osx]
-  number: 1
+  number: 2
   entry_points:
     - py2applet = py2app.script_py2applet:main
   missing_dso_whitelist:
