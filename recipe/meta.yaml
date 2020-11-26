@@ -1,6 +1,7 @@
 {% set name = "py2app" %}
 {% set version = "0.22" %}
 
+
 package:
   name: {{ name|lower }}
   version: {{ version }}
@@ -21,12 +22,12 @@ requirements:
   host:
     - pip
     - python
+    - unittest2
   run:
     - altgraph >=0.16
     - macholib >=1.11
     - modulegraph >=0.17
     - python
-    - setuptools
 
 test:
   imports:
@@ -38,14 +39,17 @@ test:
     - py2app.recipes
     - py2app.recipes.PIL
   commands:
+    - pip check
     - py2applet --help
   requires:
+    - pip
     - pyobjc-core
 
 about:
-  home: https://github.com/ronaldoussoren/py2app
+  home: http://github.com/ronaldoussoren/py2app
+  summary: Create standalone Mac OS X applications with Python
+  doc_url: https://py2app.readthedocs.io/en/latest/
   license: MIT
-  license_family: MIT
   license_file: LICENSE.txt
   summary: |
     py2app is a Python setuptools command which will allow you to make
@@ -53,7 +57,6 @@ about:
     py2app is similar in purpose and design to py2exe for Windows.
     py2app must be used on OSX to build applications, it cannot create Mac
     applications on other platforms.
-  doc_url: https://py2app.readthedocs.io/en/latest/
   dev_url: https://github.com/ronaldoussoren/py2app
 
 extra:
