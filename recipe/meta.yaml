@@ -18,6 +18,8 @@ build:
     - '*/libgcc_s.1.dylib'
 
 requirements:
+  build:
+    - {{ compiler('c') }}
   host:
     - pip
     - python
