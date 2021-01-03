@@ -1,5 +1,5 @@
 {% set name = "py2app" %}
-{% set version = "0.22" %}
+{% set version = "0.23" %}
 
 package:
   name: {{ name|lower }}
@@ -7,17 +7,19 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 0ec29109338cb7c5340457aa6df972904d0d00533e8ab4107b9e00fe1da5d300
+  sha256: 772f7b30cac260537ecfada2801d1e9833010caf6d0439e80e64e1a558718d39
 
 build:
   skip: true  # [not osx]
-  number: 1
+  number: 0
   entry_points:
     - py2applet = py2app.script_py2applet:main
   missing_dso_whitelist:
     - '*/libgcc_s.1.dylib'
 
 requirements:
+  build:
+    - {{ compiler('c') }}
   host:
     - pip
     - python
