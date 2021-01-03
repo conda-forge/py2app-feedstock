@@ -18,7 +18,7 @@ if __name__ == '__main__':
       print(bin_file)
       libraries = list()
       try:
-        libraries = check_output(['otool', '-L', bin_file]).decode('utf8').split('\n')
+        libraries = check_output([os.environ['OTOOL'], '-L', bin_file]).decode('utf8').split('\n')
       except CalledProcessError:
         pass
       for line in libraries[1:]:
@@ -30,13 +30,13 @@ if __name__ == '__main__':
             new_lib = os.path.join('@rpath', lib.split('/')[-1])
           if new_lib is not None:
             print('Changing {lib} to {new_lib}'.format(lib=lib, new_lib=new_lib))
-            cmd = ['install_name_tool', '-change', lib, new_lib, bin_file]
+            cmd = [os.environ['INSTALL_NAME_TOOL'], '-change', lib, new_lib, bin_file]
             print(' '.join(cmd))
             try:
               output = check_output(cmd)
             except CalledProcessError:
               pass
-            cmd = ['install_name_tool', '-add_rpath',
+            cmd = [os.environ['INSTALL_NAME_TOOL'], '-add_rpath',
                    os.path.join('@loader_path', '..', 'lib'),
                    bin_file]
             print(' '.join(cmd))
