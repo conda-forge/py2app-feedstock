@@ -8,10 +8,12 @@ package:
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 772f7b30cac260537ecfada2801d1e9833010caf6d0439e80e64e1a558718d39
+  patches:
+    - distutils.patch  # [python_impl == 'pypy']
 
 build:
   skip: true  # [not osx]
-  number: 0
+  number: 1
   entry_points:
     - py2applet = py2app.script_py2applet:main
   missing_dso_whitelist:
