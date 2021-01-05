@@ -1,2 +1,4 @@
-conda_forge_output_validation: true
+azure:
+  store_build_artifacts: true
 channel_priority: flexible
+conda_forge_output_validation: true
