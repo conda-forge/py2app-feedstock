@@ -9,9 +9,9 @@ index 65c4dcd..e117936 100644
 -from distutils.sysconfig import get_config_h_filename, get_config_var
 +from distutils.sysconfig import get_config_var
 +try:
-+    from distutils.sysconfg import get_config_h_filename
++    from distutils.sysconfig import get_config_h_filename
 +except ImportError:  # pypy compatibility
-+    from distutils.sysconfg_cython import get_config_h_filename
++    from distutils.sysconfig_cython import get_config_h_filename
  from distutils.util import convert_path, get_platform
  from itertools import chain
  
