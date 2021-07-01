@@ -36,13 +36,6 @@ Current build status
         <table>
           <thead><tr><th>Variant</th><th>Status</th></tr></thead>
           <tbody><tr>
-              <td>osx_64_python3.6.____73_pypypython_implpypy</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=9213&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/py2app-feedstock?branchName=master&jobName=osx&configuration=osx_64_python3.6.____73_pypypython_implpypy" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
               <td>osx_64_python3.6.____cpythonpython_implcpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=9213&branchName=master">
@@ -99,6 +92,7 @@ Installing `py2app` from the `conda-forge` channel can be achieved by adding `co
 
 ```
 conda config --add channels conda-forge
+conda config --set channel_priority strict
 ```
 
 Once the `conda-forge` channel has been enabled, `py2app` can be installed with:
