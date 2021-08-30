@@ -1,5 +1,5 @@
 diff --git a/py2app/build_app.py b/py2app/build_app.py
-index 65c4dcd..e117936 100644
+index b3f9d34..3f21318 100644
 --- a/py2app/build_app.py
 +++ b/py2app/build_app.py
 @@ -16,7 +16,11 @@ import types
@@ -14,40 +14,4 @@ index 65c4dcd..e117936 100644
 +    from distutils.sysconfig_cpython import get_config_h_filename
  from distutils.util import convert_path, get_platform
  from itertools import chain
- 
-@@ -104,7 +108,7 @@ def loader_paths(sourcefn, destfn):
-             relpath = other[13:]
-             yield os.path.join(sourcedir, relpath), os.path.join(destdir, relpath)
- 
--        
-+
- 
- def rewrite_tkinter_load_commands(tkinter_path):
-     print("rewrite_tk", tkinter_path)
-@@ -1658,7 +1662,7 @@ class py2app(Command):
-                     self.strip_files(platfiles)
- 
-                 arch = self.arch if self.arch is not None else get_platform().split("-")[-1]
--               
-+
-                 if arch in ("universal2", "arm64"):
-                     codesign_adhoc(target.appdir)
-             self.app_files.append(dst)
-@@ -2230,7 +2234,7 @@ class py2app(Command):
- 
-     def copy_loader_paths(self, sourcefn, destfn):
-         todo = [(sourcefn, destfn)]
--    
-+
-         while todo:
-             next = []
-             for item in todo:
-@@ -2407,7 +2411,7 @@ class py2app(Command):
-             copy_file(copyext.filename, fn, dry_run=self.dry_run)
- 
-             # MachoStandalone does not support '@loader_path' (and cannot in its
--            # current form). Check for "@loader_path" in the load commands of 
-+            # current form). Check for "@loader_path" in the load commands of
-             # the extension and copy those files into the bundle as well.
-             self.copy_loader_paths(copyext.filename, fn)
  
