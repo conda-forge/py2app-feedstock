@@ -1,5 +1,5 @@
 {% set name = "py2app" %}
-{% set version = "0.24" %}
+{% set version = "0.25" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 753915b2efaa72b23de1553e00f2cd9d3b4fdc05269ccae4b65c710e38121d67
+  sha256: 546b561fb3553c91dced52b1991d15f0da9a856ffed537932fb68bdae078b89c
   patches:
     - distutils.patch  # [python_impl == 'pypy']
 
