@@ -8,6 +8,8 @@ package:
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 546b561fb3553c91dced52b1991d15f0da9a856ffed537932fb68bdae078b89c
+  patches:
+    - distutils.patch  # [python_impl == 'pypy']
 
 build:
   skip: true  # [not osx]

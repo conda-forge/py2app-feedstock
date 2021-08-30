@@ -1,0 +1,17 @@
+diff --git a/py2app/build_app.py b/py2app/build_app.py
+index b3f9d34..3f21318 100644
+--- a/py2app/build_app.py
++++ b/py2app/build_app.py
+@@ -16,7 +16,11 @@ import types
+ import zipfile
+ from distutils import log
+ from distutils.errors import DistutilsOptionError, DistutilsPlatformError
+-from distutils.sysconfig import get_config_h_filename, get_config_var
++from distutils.sysconfig import get_config_var
++try:
++    from distutils.sysconfig import get_config_h_filename
++except ImportError:  # pypy compatibility
++    from distutils.sysconfig_cpython import get_config_h_filename
+ from distutils.util import convert_path, get_platform
+ from itertools import chain
+ 
