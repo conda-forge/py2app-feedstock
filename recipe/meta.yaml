@@ -21,6 +21,8 @@ build:
 
 requirements:
   build:
+    - python                                 # [build_platform != target_platform]
+    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
     - {{ compiler('c') }}
   host:
     - pip
@@ -43,8 +45,6 @@ test:
     - py2app.recipes.PIL
   commands:
     - py2applet --help
-  requires:
-    - pyobjc-core
 
 about:
   home: http://bitbucket.org/ronaldoussoren/py2app
