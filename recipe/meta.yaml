@@ -45,8 +45,6 @@ test:
     - py2app.recipes.PIL
   commands:
     - py2applet --help
-  requires:
-    - pyobjc-core
 
 about:
   home: http://bitbucket.org/ronaldoussoren/py2app
