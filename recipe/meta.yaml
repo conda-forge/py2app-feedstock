@@ -1,5 +1,5 @@
 {% set name = "py2app" %}
-{% set version = "0.26.1" %}
+{% set version = "0.27" %}
 
 package:
   name: {{ name|lower }}
@@ -7,13 +7,13 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: edbb852509466d34b96b41b1b2d212ad86dfa1bc29c54b3e18e54533e5d92239
+  sha256: cefd26e9f0fda35abef766142061e2b8566e0e08f54792c75dfd500258948bd3
   patches:
     - distutils.patch  # [python_impl == 'pypy']
 
 build:
   skip: true  # [not osx]
-  number: 1
+  number: 0
   entry_points:
     - py2applet = py2app.script_py2applet:main
   missing_dso_whitelist:
