@@ -4,4 +4,4 @@
 ${PYTHON} ${RECIPE_DIR}/fix_macos_rpath.py
 
 # install
-${PYTHON} -m pip install . --no-deps -vv
+${PYTHON} -m pip install . --no-build-isolation -vv
