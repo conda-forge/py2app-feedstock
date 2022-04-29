@@ -1,5 +1,5 @@
 {% set name = "py2app" %}
-{% set version = "0.27" %}
+{% set version = "0.28" %}
 
 package:
   name: {{ name|lower }}
@@ -7,13 +7,13 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: cefd26e9f0fda35abef766142061e2b8566e0e08f54792c75dfd500258948bd3
+  sha256: fcf2794548b144ab895733c0fc06e7224e4074d0d97b9ddddbde8dcf64bee57c
   patches:
     - distutils.patch  # [python_impl == 'pypy']
 
 build:
   skip: true  # [not osx]
-  number: 1
+  number: 0
   entry_points:
     - py2applet = py2app.script_py2applet:main
   missing_dso_whitelist:
@@ -25,11 +25,15 @@ requirements:
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
     - {{ compiler('c') }}
   host:
+    - altgraph >=0.16
+    - macholib >=1.16
+    - modulegraph >=0.17
     - pip
     - python
+    - setuptools
   run:
     - altgraph >=0.16
-    - macholib >=1.11
+    - macholib >=1.16
     - modulegraph >=0.17
     - python
     - setuptools
@@ -44,7 +48,7 @@ test:
     - py2app.recipes
     - py2app.recipes.PIL
   commands:
-    - py2applet --help
+    - py2applet
 
 about:
   home: http://bitbucket.org/ronaldoussoren/py2app
