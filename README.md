@@ -1,7 +1,7 @@
 About py2app
 ============
 
-Home: http://bitbucket.org/ronaldoussoren/py2app
+Home: https://github.com/ronaldoussoren/py2app
 
 Package license: MIT
 
@@ -14,7 +14,7 @@ py2app must be used on OSX to build applications, it cannot create Mac
 applications on other platforms.
 
 
-Development: http://bitbucket.org/ronaldoussoren/py2app
+Development: https://github.com/ronaldoussoren/py2app
 
 Documentation: https://py2app.readthedocs.io/en/latest/
 
