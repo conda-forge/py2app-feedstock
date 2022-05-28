@@ -51,7 +51,7 @@ test:
     - py2applet
 
 about:
-  home: http://bitbucket.org/ronaldoussoren/py2app
+  home: https://github.com/ronaldoussoren/py2app
   license: MIT
   license_family: MIT
   license_file: LICENSE.txt
@@ -62,7 +62,7 @@ about:
     py2app must be used on OSX to build applications, it cannot create Mac
     applications on other platforms.
   doc_url: https://py2app.readthedocs.io/en/latest/
-  dev_url: http://bitbucket.org/ronaldoussoren/py2app
+  dev_url: https://github.com/ronaldoussoren/py2app
 
 extra:
   recipe-maintainers:
