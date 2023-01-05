@@ -25,16 +25,16 @@ requirements:
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
     - {{ compiler('c') }}
   host:
-    - altgraph >=0.16
-    - macholib >=1.16
-    - modulegraph >=0.17
+    - altgraph >=0.17.3
+    - macholib >=1.16.2
+    - modulegraph >=0.19.3
     - pip
     - python
     - setuptools
   run:
-    - altgraph >=0.16
-    - macholib >=1.16
-    - modulegraph >=0.17
+    - altgraph >=0.17.3
+    - macholib >=1.16.2
+    - modulegraph >=0.19.3
     - python
     - setuptools
 
