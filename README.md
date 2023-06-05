@@ -1,11 +1,11 @@
-About py2app
-============
+About py2app-feedstock
+======================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/py2app-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/ronaldoussoren/py2app
 
 Package license: MIT
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/py2app-feedstock/blob/main/LICENSE.txt)
 
 Summary: py2app is a Python setuptools command which will allow you to make
 standalone Mac OS X application bundles and plugins from Python scripts.
