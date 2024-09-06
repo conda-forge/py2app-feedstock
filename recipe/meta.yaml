@@ -17,7 +17,7 @@ build:
   entry_points:
     - py2applet = py2app.script_py2applet:main
   missing_dso_whitelist:
-    - '*/libgcc_s.1.dylib'
+    - '*/libgcc_s*.dylib'
 
 requirements:
   build:
