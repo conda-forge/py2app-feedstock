@@ -13,7 +13,7 @@ source:
 
 build:
   skip: true  # [not osx]
-  number: 1
+  number: 2
   entry_points:
     - py2applet = py2app.script_py2applet:main
   missing_dso_whitelist:
@@ -24,6 +24,7 @@ requirements:
     - python                                 # [build_platform != target_platform]
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
   host:
     - altgraph >=0.17.3
     - macholib >=1.16.2
