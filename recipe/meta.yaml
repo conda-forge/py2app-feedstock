@@ -1,5 +1,5 @@
 {% set name = "py2app" %}
-{% set version = "0.28.7" %}
+{% set version = "0.28.8" %}
 
 package:
   name: {{ name|lower }}
@@ -7,13 +7,13 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 6d74a97b0f0ec92999b6251a255ae37a18d0ae89939e72dbb6d9d7dae06a5e10
+  sha256: cab7aec752a8b83e7c6cef7c15271dc720155275e44cbf610e3162e0807313ec
   patches:
     - distutils.patch  # [python_impl == 'pypy']
 
 build:
   skip: true  # [not osx]
-  number: 1
+  number: 0
   entry_points:
     - py2applet = py2app.script_py2applet:main
   missing_dso_whitelist:
@@ -24,6 +24,7 @@ requirements:
     - python                                 # [build_platform != target_platform]
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
   host:
     - altgraph >=0.17.3
     - macholib >=1.16.2
