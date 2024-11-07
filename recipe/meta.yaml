@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: cab7aec752a8b83e7c6cef7c15271dc720155275e44cbf610e3162e0807313ec
   patches:
     - distutils.patch  # [python_impl == 'pypy']
