@@ -13,7 +13,7 @@ source:
 
 build:
   skip: true  # [not osx]
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . --no-deps -vv
   entry_points:
     - py2applet = py2app.script_py2applet:main
