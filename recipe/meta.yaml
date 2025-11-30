@@ -1,5 +1,5 @@
 {% set name = "py2app" %}
-{% set version = "0.28.8" %}
+{% set version = "0.28.9" %}
 
 package:
   name: {{ name|lower }}
@@ -7,17 +7,17 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: cab7aec752a8b83e7c6cef7c15271dc720155275e44cbf610e3162e0807313ec
+  sha256: bcbddd3017c51203858428f4cd66a7d7ea1096c6d57f1257cc2fdb066927c7c5
   patches:
     - distutils.patch  # [python_impl == 'pypy']
 
 build:
   skip: true  # [not osx]
-  number: 2
+  number: 0
   script: {{ PYTHON }} -m pip install . --no-deps -vv
   entry_points:
     - py2applet = py2app.script_py2applet:main
-  binary_relocation: False
+  binary_relocation: false
 requirements:
   build:
     - python                                 # [build_platform != target_platform]
