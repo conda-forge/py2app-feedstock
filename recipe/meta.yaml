@@ -1,5 +1,5 @@
 {% set name = "py2app" %}
-{% set version = "0.28.9" %}
+{% set version = "0.28.10" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: bcbddd3017c51203858428f4cd66a7d7ea1096c6d57f1257cc2fdb066927c7c5
+  sha256: fd38f4a0083d4d1e91ea336eaef678b99d9e1b95ac6302315cad22fa5e859cb1
   patches:
     - distutils.patch  # [python_impl == 'pypy']
 
@@ -25,16 +25,16 @@ requirements:
     - {{ compiler('c') }}
     - {{ stdlib("c") }}
   host:
-    - altgraph >=0.17.3
-    - macholib >=1.16.2
-    - modulegraph >=0.19.6
+    - altgraph >=0.17.5
+    - macholib >=1.16.4
+    - modulegraph >=0.19.7
     - pip
     - python
     - setuptools
   run:
-    - altgraph >=0.17.3
-    - macholib >=1.16.2
-    - modulegraph >=0.19.6
+    - altgraph >=0.17.5
+    - macholib >=1.16.4
+    - modulegraph >=0.19.7
     - python
     - setuptools
 
