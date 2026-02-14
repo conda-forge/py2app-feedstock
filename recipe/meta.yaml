@@ -25,16 +25,16 @@ requirements:
     - {{ compiler('c') }}
     - {{ stdlib("c") }}
   host:
-    - altgraph >=0.17.3
-    - macholib >=1.16.2
-    - modulegraph >=0.19.6
+    - altgraph >=0.17.5
+    - macholib >=1.16.4
+    - modulegraph >=0.19.7
     - pip
     - python
     - setuptools
   run:
-    - altgraph >=0.17.3
-    - macholib >=1.16.2
-    - modulegraph >=0.19.6
+    - altgraph >=0.17.5
+    - macholib >=1.16.4
+    - modulegraph >=0.19.7
     - python
     - setuptools
 
